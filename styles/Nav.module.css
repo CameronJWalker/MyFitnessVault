@@ -1,0 +1,28 @@
+.bar {
+    color: #D01110;
+    display: flex;
+    background-color: #0A0A00; 
+    height: 6vh;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3vh;
+  }
+  .bar p {
+    background-color: inherit; 
+    font-family: 'Emblema One', cursive;
+    font-size: 2em;
+  }
+  .homebutton {
+    padding: 5px;
+    margin-left: 300px;
+    font-size: 2em;
+    background-color: inherit;
+    color: #D01110;
+    text-decoration: none;
+  }
+  .homebutton p {
+    font-size: .8em;
+  }
+  .homebutton:hover {
+    background-image: linear-gradient(to top left, red,black);
+  }
