@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 export default function NewWorkout() {
     const initInputs = {
-        workoutname: "",
+        workoutName: "",
         cOs: "",
         sets: "",
         reps: "",

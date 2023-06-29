@@ -4,8 +4,11 @@ import Nav from '../styles/Nav.module.css'
 export default function Navbar() {
     return (
         <div className={Nav.bar}>
-            <p>Workout App</p>
-            <Link href="/" className={Nav.homebutton}><p>Home</p></Link>
+            <Link href="/" className={Nav.homebutton}><h3>Workout App</h3></Link>
+            <Link href="/newworkout" className={Nav.homebutton}><p>Workout</p></Link>
+            <Link href="/nutrition" className={Nav.homebutton}><p>Nutrition</p></Link>
+            <Link href="/prlog" className={Nav.homebutton}><p>PR</p></Link>
+
         </div>
     )
 }

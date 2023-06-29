@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 
 export default function Nutrition() {
     const initInputs = {
-        mealname: "",
-        servsize: "",
+        mealName: "",
+        servSize: "",
         cal: "",
         fat: "",
         carbs: "",
