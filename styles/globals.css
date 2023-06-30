@@ -16,39 +16,11 @@ main {
   justify-content: center;
   align-items: center;
 }
-/* button container for Home */
-.button-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  
-}
-
-.button-container a button {
-  width: 15vw;
-  background-color:#0A0A00; 
-  color: #cd3d36;
-  border: none;
-  margin: 15px;
-  border-radius: 15px;
-  padding: 4vh;
-  font-size: larger;
-  font-family: 'Exo 2', sans-serif;
-}
-.button-container a button:hover {
-  border: none;
-  padding: 2vh;
-  border-radius: 15px;
-  padding: 4vh;
-  font-size: larger;
-}
 
 
+/* container for component forms */
 .container{
-  
-  max-width: 700px;
-  width: 100%;
-  background: white;
+  background: #fffff2;
   padding: 25px 30px;
   border-radius: 5px;
 }
@@ -71,7 +43,8 @@ form .topic-details .input-wrap{
 .topic-details .input-wrap details{
   display: block;
   font-weight: 500;
-  margin-bottom: 5px;;
+  margin-bottom: 5px;
+  
 }
 
 .topic-details .input-wrap input{
@@ -92,7 +65,7 @@ form .button input{
   height: 100%;
   width: 645px;
   outline: none;
-  color: #fff;
+  color: #fffff2;
   border: none;
   border-radius: 5px;
   font-size: 18px;

@@ -28,7 +28,6 @@ export default function PRLog() {
   const {workoutName, weight} = inputs
   return(
     <div className="container">
-      <h1>The Workout App</h1>
       <div className="title"> 
         <h2>Personal Records</h2>
         <h6> Enter Personal Records Below </h6>

@@ -1,0 +1,27 @@
+.buttoncontainer a button {
+  width: 15vw;
+  background-color:#0A0A00; 
+  color: #cd3d36;
+  border: none;
+  margin: 15px;
+  border-radius: 15px;
+  padding: 4vh;
+  font-size: larger;
+  font-family: 'Exo 2', sans-serif;
+}
+.buttoncontainer a button:hover {
+  border: none;
+  padding: 2vh;
+  border-radius: 15px;
+  padding: 4vh;
+  font-size: larger;
+  color:#fffff2;
+  cursor: pointer;
+}
+.feedcontainer {
+  width: 50vw;
+  height: 50vh;
+  background-color: #fffff2;
+  margin-top: 75px;
+  border-radius: 5px;
+}
