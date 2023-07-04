@@ -2,13 +2,17 @@
     color: #fa544c;
     display: flex;
     background-color: #0A0A00; 
-    height: 6vh;
+    height: 8vh;
     align-items: center;
+    align-content: center;
     margin-bottom: 6vh;
+    justify-content: center;
+  }
+  .title{
+    padding: 50px;
   }
   .homebutton {
-    padding: 5px;
-    margin-left: 300px;
+    padding: 25px;
     font-size: 2em;
     color: #cd3d36;
     text-decoration: none;
