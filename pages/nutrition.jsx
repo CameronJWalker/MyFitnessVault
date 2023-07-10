@@ -1,37 +1,30 @@
 import React, { useState } from 'react';
-// import axios from 'axios';
+import supabase from "./api/supabaseClient.js"
 
 export default function Nutrition() {
-    const initInputs = {
-        mealName: "",
-        servSize: "",
-        cal: "",
-        fat: "",
-        carbs: "",
-        protein: ""
-    }
-    const [inputs, setInputs] = useState(initInputs);
+    const [ mealName, setMealName ] = useState('')
+    const [ calories, setCalories ] = useState('')
+    const [ protein, setProtein ] = useState('')
+    const [ fat, setFat ] = useState('')
+    const [ carbs, setCarbs ] = useState('')
+    const [ formError, setFormError ] = useState(null)
 
-    function handleChange(e){
-        const {name, value} = e.target
-        setInputs(prevInputs => ({
-          ...prevInputs,
-          [name]: value
-        }))
-    }
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        // axios.post("/nutrition", inputs)
-        //     .then(res => {
-        //         return res.data
-        //     })
-        //     .catch(err => console.log(err.response.data.errMsg))
-        setInputs(initInputs)
-        console.log(inputs)
-    }
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        const { data, error } = await supabase 
+          .from('nutrition')
+          .insert([{ mealName, calories, protein, fat, carbs }])
+  
+        if (error) {
+          console.log("Error!")
+          setFormError('Error!')
+        }
+        if (data) {
+          console.log(data)
+          setFormError(null)
+        }
+      }
    
-    const {mealname, servsize, cal, fat, carbs, protein} = inputs
     return (
         <div className="container">
             <div className="title">
@@ -48,36 +41,24 @@ export default function Nutrition() {
                         <input
                             type="text"
                             placeholder=" Enter Food Name"
-                            name="mealname"   
+                            name="mealName"   
                             className="input-field" 
-                            autoComplete="off"
-                            value={mealname}
-                            onChange={handleChange}
-                            required/>
-                    </div>
-                    <div className="input-wrap">
-                        <span className="details">Serving Size</span>
-                        <input
-                            type="number" 
-                            placeholder="Enter Serving Size"
-                            name="servsize" 
-                            className="input-field" 
-                            autoComplete="off"
-                            value={servsize}
-                            onChange={handleChange}
-                            required/>
+                            value={mealName}
+                            onChange={(e) => setMealName(e.target.value)}
+                            required
+                        />
                     </div>
                     <div className="input-wrap">
                         <span className="details">Calories</span>
                         <input
                             type="number" 
                             placeholder="Enter Calories"
-                            name="cal"  
+                            name="calories"  
                             className="input-field" 
-                            autoComplete="off"
-                            value={cal}
-                            onChange={handleChange}
-                            required/>
+                            value={calories}
+                            onChange={(e) => setCalories(e.target.value)}
+                            required
+                        />
                     </div>
                     <div className="input-wrap">
                         <span className="details">Protein(g)</span>
@@ -86,10 +67,10 @@ export default function Nutrition() {
                             placeholder="Enter Protein(g)"
                             name="protein" 
                             className="input-field" 
-                            autoComplete="off"
                             value={protein}
-                            onChange={handleChange}
-                            required/>
+                            onChange={(e) => setProtein(e.target.value)}
+                            required
+                        />
                     </div>
                     <div className="input-wrap">
                         <span className="details">Fat(g)</span>
@@ -98,10 +79,10 @@ export default function Nutrition() {
                             placeholder="Enter Fat(g) "
                             name="fat" 
                             className="input-field" 
-                            autoComplete="off"
                             value={fat}
-                            onChange={handleChange}
-                            required/>
+                            onChange={(e) => setFat(e.target.value)}
+                            required
+                        />
                     </div>
                     <div className="input-wrap">
                         <span className="details">Carbs(g)</span>
@@ -110,10 +91,10 @@ export default function Nutrition() {
                             placeholder="Enter Carbs (g) " 
                             name="carbs" 
                             className="input-field" 
-                            autoComplete="off"
                             value={carbs}
-                            onChange={handleChange}
-                            required/>
+                            onChange={(e) => setCarbs(e.target.value)}
+                            required
+                        />
                     </div>
                     <div className="button">
                         <input type="submit" value="Submit Nutrition"className="sign-btn" />

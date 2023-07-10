@@ -1,5 +1,7 @@
 import Link from 'next/link'
-import HomeFeed from '../components/feed'
+import WorkoutFeed from '../components/WorkoutFeed'
+import NutritionFeed from '../components/NutritionFeed'
+
 import Home from '../styles/Home.module.css'
 
 export default function HomePage() {
@@ -12,7 +14,8 @@ export default function HomePage() {
         <Link href="/prlog"><button> New Personal Record </button></Link>
       </div>
       <div className={Home.feedcontainer}>
-        <HomeFeed />
+        <WorkoutFeed />
+        <NutritionFeed />
       </div>
     </div>
   )

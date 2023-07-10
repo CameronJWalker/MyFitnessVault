@@ -1,37 +1,32 @@
 import React, { useState } from 'react';
+import supabase from "./api/supabaseClient.js"
 
 export default function NewWorkout() {
-    const initInputs = {
-        workoutName: "",
-        cOs: "",
-        sets: "",
-        reps: "",
-        weight: "",
-        duration: "",
-        burned: ""
-    }
-    const [inputs, setInputs] = useState(initInputs);
-
-    function handleChange(e){
-        const {name, value} = e.target
-        setInputs(prevInputs => ({
-          ...prevInputs,
-          [name]: value
-        }))
-    }
+    const [ name, setName ] = useState('')
+    const [ type, setType ] = useState('')
+    const [ sets, setSets ] = useState('')
+    const [ reps, setReps ] = useState('')
+    const [ weight, setWeight ] = useState('')
+    const [ rest, setRest ] = useState('')
+    const [ formError, setFormError ] = useState(null)
     
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        // axios.post("/newworkout", inputs)
-        //     .then(res => {
-        //         return res.data
-        //     })
-        //     .catch(err => console.log(err.response.data.errMsg))
-        setInputs(initInputs)
-        console.log(inputs)
+    const handleSubmit = async (e) => {
+      e.preventDefault()
+      const { data, error } = await supabase 
+        .from('workouts')
+        .insert([{ name, type, sets, reps, weight, rest }])
+        .select()
+
+      if (error) {
+        console.log("Error!")
+        setFormError('Error!')
+      }
+      if (data) {
+        console.log(data)
+        setFormError(null)
+      }
     }
 
-    const {workoutname, cOs, sets, reps, weight, duration, burned} = inputs
     return (
     <div className="container">
       <div className="title">New Workout
@@ -45,27 +40,25 @@ export default function NewWorkout() {
             <div className="input-wrap">
               <span className= "details">Workout Name</span>
                 <input
-                                type="text"
-                                placeholder=" Enter Workout Name"
-                                name="workoutname"   
-                                className="input-field" 
-                                autoComplete="off"
-                                value={workoutname}
-                                onChange={handleChange}
-                                required
+                      type="text"
+                      placeholder=" Enter Workout Name"
+                      name="workoutname"   
+                      className="input-field" 
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      required
                 />
             </div>
 
             <div className="input-wrap">
               <span className="details">Cardio or Strength</span>
                   <input
-                       type="text" 
-                       placeholder="Cardio or Stregnth"
-                        name="cOs" 
-                        value={cOs}
+                        type="text" 
+                        placeholder="Cardio or Stregnth"
+                        name="workoutType" 
+                        value={type}
                         className="input-field" 
-                        autoComplete="off"
-                        onChange={handleChange}
+                        onChange={(e) => setType(e.target.value)}
                         required
                   />
             </div>
@@ -73,13 +66,12 @@ export default function NewWorkout() {
             <div className="input-wrap">
               <span className="details"># of Sets</span>
                   <input
-                       type="number" 
-                       placeholder="Enter # of Sets"
+                        type="number" 
+                        placeholder="Enter # of Sets"
                         name="sets" 
                         className="input-field" 
-                        autoComplete="off"
                         value={sets}
-                        onChange={handleChange}
+                        onChange={(e) => setSets(e.target.value)}
                         required
                   />
             </div>
@@ -87,59 +79,46 @@ export default function NewWorkout() {
             <div className="input-wrap">
               <span className="details"># of Reps</span>
                   <input
-                       type="number" 
-                       placeholder="Enter # of Reps"
+                        type="number" 
+                        placeholder="Enter # of Reps"
                         name="reps" 
                         className="input-field" 
-                        autoComplete="off"
                         value={reps}
-                        onChange={handleChange}
+                        onChange={(e) => setReps(e.target.value)}
                         required
                   />
             </div>
             <div className="input-wrap">
               <span className="details">Weight</span>
                   <input
-                      type="text" 
-                      placeholder="Enter Weight"
-                      name="weight" 
-                      className="input-field" 
-                      autoComplete="off"
-                      value={weight}
-                      onChange={handleChange}
-                      required
-                  />
-            </div>
-            <div className="input-wrap">
-              <span className="details">Workout Duration</span>
-                  <input
-                      type="number" 
-                      placeholder="Enter Duration "
-                      name="duration" 
-                      value={duration} 
-                      className="input-field" 
-                      autoComplete="off"
-                      onChange={handleChange}
-                      required
-                  />
-            </div>
-
-            <div className="input-wrap">
-              <span className="details">Est. Calories Burned </span>
-                    <input
-                        type="number"
-                        placeholder="Enter (e+calories burned)" 
-                        name="burned"
-                        value={burned}
-                        onChange={handleChange}
+                        type="text" 
+                        placeholder="Enter Weight (lbs)"
+                        name="weight" 
+                        className="input-field" 
+                        value={weight}
+                        onChange={(e) => setWeight(e.target.value)}
                         required
-                    />
-              </div>
+                  />
+            </div>
+            <div className="input-wrap">
+              <span className="details">Rest Duration</span>
+                  <input
+                        type="number" 
+                        placeholder="Enter Rest Duration in seconds "
+                        name="restDuration" 
+                        value={rest} 
+                        className="input-field" 
+                        autoComplete="off"
+                        onChange={(e) => setRest(e.target.value)}
+                        required
+                  />
+            </div>
               <div className="button">
                 <input type="submit" value="Submit New Workout"className="sign-btn" />
               </div>
             </div>
       </form>
     </div>
+    
     )
 }

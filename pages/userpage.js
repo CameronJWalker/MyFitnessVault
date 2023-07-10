@@ -1,8 +1,9 @@
 import React, { useState } from "react"
 import User from "../styles/User.module.css"
-import { createClient } from "@supabase/supabase-js";
+import supabase from "./api/supabaseClient.js"
 
 export default function UserPage() {
+    console.log(supabase)
     
     const [signUp, setSignUp] = useState({
         username: "",
