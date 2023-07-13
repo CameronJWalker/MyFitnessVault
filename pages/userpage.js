@@ -3,19 +3,8 @@ import User from "../styles/User.module.css"
 import supabase from "./api/supabaseClient.js"
 
 export default function UserPage() {
-    console.log(supabase)
-    
-    const [signUp, setSignUp] = useState({
-        username: "",
-        password: ""
-    })
-    const [login, setLogin] = useState({
-        username: "",
-        password: ""
-    })
-    const [loginMessage, setLoginMessage] = useState()
-
-    const [signUpMessage, setSignUpMessage] = useState()
+    const [ username, setUsername ] = useState()
+    const [ password, setPassword ] = useState()
     
     async function HandleSignupSubmit(e){ 
         e.preventDefault()
@@ -33,10 +22,19 @@ export default function UserPage() {
                     <h2>SignUp</h2>
                     <form onSubmit={HandleSignupSubmit} className={User.signup}>
                         <label>Username</label>
-                        <input required type="text" placeholder="Enter Username" onChange={e => {setSignUp({...signUp,username: e.target.value })}}/>
+                        <input 
+                            required 
+                            type="text" 
+                            placeholder="Enter Username" 
+                            onChange={(e) => setUsername(e.target.value)}
+                        />
                         <label>Password</label>
-                        <input required type="password" placeholder="Enter Password" onChange={e => {setSignUp({...signUp,password: e.target.value })}}/>
-                        {signUpMessage ? <p id="ErrorMessage">{signUpMessage}</p> : <></>}
+                        <input 
+                            required 
+                            type="password" 
+                            placeholder="Enter Password" 
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
                         <div className={User.button}>
                             <input required type="submit" className={User.submit}/>
                         </div>
@@ -49,10 +47,19 @@ export default function UserPage() {
                     <h2>Login</h2>
                     <form onSubmit={HandleLoginSubmit}>
                         <label>Username</label>
-                        <input required type="text" placeholder="Enter Username" onChange={e => {setLogin({...login,username: e.target.value })}}/>
+                        <input 
+                            required 
+                            type="text" 
+                            placeholder="Enter Username" 
+                            onChange={e => {setLogin({...login,username: e.target.value })}}
+                        />
                         <label>Password</label>
-                        <input required type="password" placeholder="Enter Password" onChange={e => {setLogin({...login,password: e.target.value })}}/>
-                        {loginMessage ? <p id="ErrorMessage">{loginMessage}</p> : <></>}
+                        <input 
+                            required 
+                            type="password" 
+                            placeholder="Enter Password" 
+                            onChange={e => {setLogin({...login,password: e.target.value })}}
+                        />
                         <div className={User.button}>
                             <input required type="submit" className={User.submit}/>
                         </div>

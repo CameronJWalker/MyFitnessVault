@@ -1,6 +1,21 @@
 .container{
+    background-color:#fffff2;
+    height: 15vh;
+    border-radius: 5px;
 
 }
+.container h3 {
+    text-align: center;
+    margin: 3px;
+    margin-bottom: 8px;
+}
 .card {
-    
+    display: grid;
+    grid-auto-flow: column;
+    padding: 3px;
+}
+.card2 {
+    display: flex;
+    justify-content: center;
+    gap: 75px;
 }

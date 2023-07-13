@@ -4,7 +4,15 @@ const NutritionCard = ({ nutrition }) => {
 
     return (
         <div className={Feed.card}>
-            <p>{nutrition.mealName} {nutrition.calories} {nutrition.protein} {nutrition.fat} {nutrition.carbs}</p>
+            <h4>{nutrition.mealName}</h4>
+            <h4>Calories:</h4>
+            <p>{nutrition.calories}</p>
+            <h4>Protien:</h4>
+            <p>{nutrition.protein}</p> 
+            <h4>Fat:</h4>
+            <p>{nutrition.fat}</p> 
+            <h4>Carbs:</h4>
+            <p>{nutrition.carbs}</p>
         </div>
     )
 }

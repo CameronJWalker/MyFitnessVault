@@ -1,41 +1,41 @@
 import React, { useState, useEffect } from 'react';
 import supabase from "../pages/api/supabaseClient.js"
 import Feed from "../styles/Feed.module.css"
-import WorkoutCard from "./WorkoutCard.js"
+import PRLogCard from "./PRLogCard.js"
 
 export default function WorkoutFeed() {
-    const [fetchError, setFetchError] = useState(null)
-    const [workouts, setWorkouts] = useState(null)
+  const [personalRecords, setPersonalRecords] = useState(null)
+  const [fetchError, setFetchError] = useState(null)
 
     useEffect(() => {
-      const fetchWorkouts = async () => {
+      const fetchPRs = async () => {
         const { data, error } = await supabase
-        .from('workouts')
+        .from('prlog')
         .select()
         .order('created_at', { ascending: false })
         .limit(4);
 
         if (error) {
           setFetchError('Could not fetch the feed')
-          setWorkouts(null)
+          setPersonalRecords(null)
           console.log(error)
         }
         if (data) {
-          setWorkouts(data)
+          setPersonalRecords(data)
           setFetchError(null)
         }
       }
-      fetchWorkouts()
+      fetchPRs()
     }, [])
 
     return (
         <div className={Feed.container}>
-            <h3>Workouts</h3>
+          <h3>Personal Records</h3>
             {fetchError && (<p>{fetchError}</p>)}
-            {workouts && (
-                <div className={Feed.workouts}>
-                    {workouts.map(workout => (
-                        <WorkoutCard  key={workout.id} workout={workout}/>
+            {personalRecords && (
+                <div className={Feed.prlog}>
+                    {personalRecords.map(personalRecord => (
+                        <PRLogCard  key={personalRecord.id} personalRecord={personalRecord}/>
                     ))}
                 </div>
             )}

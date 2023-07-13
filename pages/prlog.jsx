@@ -1,31 +1,28 @@
 import React, { useState } from 'react';
+import supabase from "./api/supabaseClient.js"
 
 export default function PRLog() {
-  const initInputs = {
-    workoutName: "",
-    weight: ""
-  }
-  const [inputs, setInputs] = useState(initInputs);
+    const [ name, setName ] = useState('')
+    const [ weight, setWeight ] = useState('')
+    const [ formError, setFormError ] = useState(null)
 
-  function handleChange(e){
-    const {name, value} = e.target
-    setInputs(prevInputs => ({
-      ...prevInputs,
-      [name]: value
-    }))
-  }
+    const handleSubmit = async (e) => {
+      e.preventDefault()
+      const { data, error } = await supabase 
+        .from('prlog')
+        .insert([{ name, weight }])
+        .select()
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // axios.post("/prlog", inputs)
-    //         .then(res => {
-    //             return res.data
-    //         })
-    //         .catch(err => console.log(err.response.data.errMsg))
-    setInputs(initInputs)
-  }
+      if (error) {
+        console.log("Error!")
+        setFormError('Error!')
+      }
+      if (data) {
+        console.log(data)
+        setFormError(null)
+      }
+    }
 
-  const {workoutName, weight} = inputs
   return(
     <div className="container">
       <div className="title"> 
@@ -43,9 +40,9 @@ export default function PRLog() {
                   placeholder=" Enter Workout Name"
                   name="workoutName"   
                   className="input-field"
-                  value={workoutName} 
-                  onChange={handleChange}
-                  required/>
+                  value={name} 
+                  onChange={(e) => setName(e.target.value)}
+                  />
             </div>
             <div className="input-wrap">
               <span className="details">PR Weight</span>
@@ -55,8 +52,8 @@ export default function PRLog() {
                     name="weight" 
                     className="input-field" 
                     value={weight}
-                    onChange={handleChange}
-                    required/>
+                    onChange={(e) => setWeight(e.target.value)}
+                    />
             </div>
             <div className="button">
               <input type="submit" value="Submit New Workout"className="sign-btn" />

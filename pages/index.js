@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import WorkoutFeed from '../components/WorkoutFeed'
 import NutritionFeed from '../components/NutritionFeed'
+import PRLogFeed from '../components/PRLogFeed'
+
 
 import Home from '../styles/Home.module.css'
 
@@ -16,6 +18,7 @@ export default function HomePage() {
       <div className={Home.feedcontainer}>
         <WorkoutFeed />
         <NutritionFeed />
+        <PRLogFeed />
       </div>
     </div>
   )

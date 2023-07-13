@@ -3,7 +3,7 @@ import supabase from "../pages/api/supabaseClient.js"
 import Feed from "../styles/Feed.module.css"
 import NutritionCard from "./NutritionCard.js"
 
-export default function HomeFeed() {
+export default function NutritionFeed() {
     const [fetchError, setFetchError] = useState(null)
     const [nutritions, setNutritions] = useState(null)
 
@@ -12,6 +12,8 @@ export default function HomeFeed() {
         const { data, error } = await supabase
         .from('nutrition')
         .select()
+        .order('created_at', { ascending: false })
+        .limit(4);
 
         if (error) {
           setFetchError('Could not fetch the feed')
@@ -23,12 +25,12 @@ export default function HomeFeed() {
           setFetchError(null)
         }
       }
-      console.log(nutritions)
       fetchNutritions()
     }, [])
 
     return (
         <div className={Feed.container}>
+            <h3>Nutrition</h3>
             {fetchError && (<p>{fetchError}</p>)}
             {nutritions && (
                 <div className={Feed.card}>

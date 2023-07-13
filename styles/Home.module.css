@@ -18,3 +18,9 @@
   color:#fffff2;
   cursor: pointer;
 }
+.feedcontainer {
+  display: flex;
+  flex-direction: column;
+  margin: 75px;
+  gap: 25px;
+}
