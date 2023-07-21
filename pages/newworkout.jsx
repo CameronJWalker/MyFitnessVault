@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import supabase from "./api/supabaseClient.js"
 
 export default function NewWorkout() {
@@ -9,6 +9,9 @@ export default function NewWorkout() {
     const [ weight, setWeight ] = useState('')
     const [ rest, setRest ] = useState('')
     const [ formError, setFormError ] = useState(null)
+    const [user, setUser] = useState(null);
+
+    
     
     const handleSubmit = async (e) => {
       e.preventDefault()
@@ -112,7 +115,7 @@ export default function NewWorkout() {
                         onChange={(e) => setRest(e.target.value)}
                         required
                   />
-            </div>
+              </div>
               <div className="button">
                 <input type="submit" value="Submit New Workout"className="sign-btn" />
               </div>

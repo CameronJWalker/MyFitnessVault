@@ -2,19 +2,20 @@ import React, { useState } from 'react';
 import supabase from "./api/supabaseClient.js"
 
 export default function Nutrition() {
+    
     const [ mealName, setMealName ] = useState('')
     const [ calories, setCalories ] = useState('')
     const [ protein, setProtein ] = useState('')
     const [ fat, setFat ] = useState('')
     const [ carbs, setCarbs ] = useState('')
     const [ formError, setFormError ] = useState(null)
-
+    
     const handleSubmit = async (e) => {
         e.preventDefault()
         const { data, error } = await supabase 
           .from('nutrition')
-          .insert([{ mealName, calories, protein, fat, carbs }])
-  
+          .insert([{ mealName, fat, carbs, protein, calories }])
+        
         if (error) {
           console.log("Error!")
           setFormError('Error!')

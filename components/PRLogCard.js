@@ -5,7 +5,7 @@ const PRLogCard = ({ personalRecord }) => {
     return (
         <div className={Feed.card2}>
             <h4>{personalRecord.name}</h4>
-            <p>{personalRecord.weight}</p>
+            <p>{personalRecord.pr}</p>
         </div>
     )
 }

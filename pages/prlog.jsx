@@ -3,15 +3,14 @@ import supabase from "./api/supabaseClient.js"
 
 export default function PRLog() {
     const [ name, setName ] = useState('')
-    const [ weight, setWeight ] = useState('')
+    const [ pr, setPR ] = useState('')
     const [ formError, setFormError ] = useState(null)
 
     const handleSubmit = async (e) => {
       e.preventDefault()
       const { data, error } = await supabase 
         .from('prlog')
-        .insert([{ name, weight }])
-        .select()
+        .insert([{ name, pr }])
 
       if (error) {
         console.log("Error!")
@@ -51,8 +50,8 @@ export default function PRLog() {
                     placeholder="Enter PR weight"
                     name="weight" 
                     className="input-field" 
-                    value={weight}
-                    onChange={(e) => setWeight(e.target.value)}
+                    value={pr}
+                    onChange={(e) => setPR(e.target.value)}
                     />
             </div>
             <div className="button">

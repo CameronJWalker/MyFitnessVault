@@ -16,13 +16,12 @@ export default function NutritionFeed() {
         .limit(4);
 
         if (error) {
-          setFetchError('Could not fetch the feed')
-          setNutritions(null)
-          console.log(error)
+          setFetchError(false)
+          console.log(fetchError)
         }
         if (data) {
           setNutritions(data)
-          setFetchError(null)
+          setFetchError(true)
         }
       }
       fetchNutritions()
@@ -31,7 +30,7 @@ export default function NutritionFeed() {
     return (
         <div className={Feed.container}>
             <h3>Nutrition</h3>
-            {fetchError && (<p>{fetchError}</p>)}
+            {!fetchError && (<p>Login to see feed</p>)}
             {nutritions && (
                 <div className={Feed.card}>
                     {nutritions.map(nutrition => (
