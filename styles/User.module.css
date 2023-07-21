@@ -1,3 +1,4 @@
+
 .panel {
     display: flex;
     background-color: #fffff2;
@@ -48,4 +49,22 @@ form .button input:hover{
     margin-left: auto;
     margin-right: auto;
     height: 250px;
+}
+.buttonContainer{
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+.signOut{
+    color: white;
+    background-image: linear-gradient(to bottom right, #cd3d36,black);
+    width: 25vw;
+    height: 25px;
+    display: flex;
+    justify-content: center; /* Centers items horizontally */
+    align-items: center; /* Centers items vertically */
+    margin-top: 15px;
+}
+.signOut:hover{
+    background-image: linear-gradient(to top left, #cd3d36,black);
 }

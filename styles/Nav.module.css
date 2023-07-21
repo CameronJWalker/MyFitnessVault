@@ -26,3 +26,8 @@
   .homebutton p:hover {
     color: #fffff2;
   }
+  .icon {
+    height: 30px;
+    background-color: #cd3d36;
+    border-radius: 15px;
+  }

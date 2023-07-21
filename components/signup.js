@@ -3,7 +3,7 @@ import User from "../styles/User.module.css"
 import supabase from "@/pages/api/supabaseClient"
 import { useRouter } from 'next/router';
 
-export default function SignUp() {
+export default function SignUp({ signedIn }) {
     
     const [ email, setEmail ] = useState('')
     const [ password, setPassword ] = useState('')
@@ -21,6 +21,7 @@ export default function SignUp() {
         } else {
             console.log('Successful: ', email);
             router.push('/')
+
         }
         setEmail('')
         setPassword('')
@@ -47,7 +48,7 @@ export default function SignUp() {
                     onChange={(e) => setPassword(e.target.value)}
                 />
                 <div className={User.button}>
-                    <input required type="submit" className={User.submit}/>
+                   <input required type="submit" className={User.submit}/>
                 </div>
             </form>
         </div>

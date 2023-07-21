@@ -10,7 +10,7 @@ export default function Navbar() {
                 <Link href="/newworkout" className={Nav.homebutton}><p>Workout</p></Link>
                 <Link href="/nutrition" className={Nav.homebutton}><p>Nutrition</p></Link>
                 <Link href="/prlog" className={Nav.homebutton}><p>PR</p></Link>            
-                <Link href="/userpage" className={Nav.homebutton}><p>Login</p></Link>
+                <Link href="/userpage" className={Nav.homebutton}><img src="../user.png" className={Nav.icon}/></Link>
         </div>
     )
 }
