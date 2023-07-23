@@ -1,14 +1,15 @@
-import React, { useState } from "react"
 import User from "../styles/User.module.css"
-import supabase from "./api/supabaseClient.js"
 import SignUp from "../components/signup"
 import SignIn from "../components/signin"
+import { useAuth } from '../AuthContext'
 
 export default function UserPage() {
-
+    const { user, logout } = useAuth();
+    
     const handleSignOut = async () => {
-        await supabase.auth.signOut()
-      }
+        await logout();
+      };
+    
       
     return (
         <div>
@@ -20,9 +21,11 @@ export default function UserPage() {
                 <div className={User.line}></div>
                 <SignIn />
             </div>
+            {user && (
             <div className={User.buttonContainer}>
                 <button className={User.signOut} onClick={handleSignOut}>Sign out</button>
             </div>
+            )}
         </div>
     )
 }

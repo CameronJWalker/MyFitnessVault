@@ -2,24 +2,31 @@ import Link from 'next/link'
 import WorkoutFeed from '../components/WorkoutFeed'
 import NutritionFeed from '../components/NutritionFeed'
 import PRLogFeed from '../components/PRLogFeed'
-
+import { useAuth } from '../AuthContext'
 
 import Home from '../styles/Home.module.css'
 
 export default function HomePage() {
+  const { user } = useAuth();
 
   return (
-    <div className={Home.buttoncontainer}> 
-      <div>
-        <Link href="/newworkout"><button> New Workout </button></Link>
-        <Link href="/nutrition"><button> New Nutrition </button></Link>
-        <Link href="/prlog"><button> New Personal Record </button></Link>
-      </div>
-      <div className={Home.feedcontainer}>
-        <WorkoutFeed />
-        <NutritionFeed />
-        <PRLogFeed />
-      </div>
+    <div>
+      
+      {user ? (
+        <div className={Home.buttoncontainer}> 
+
+          <Link href="/newworkout"><button> New Workout </button></Link>
+          <Link href="/nutrition"><button> New Nutrition </button></Link>
+          <Link href="/prlog"><button> New Personal Record </button></Link>
+          <div className={Home.feedcontainer}>
+            <WorkoutFeed />
+            <NutritionFeed />
+            <PRLogFeed />
+          </div>
+        </div>
+      ) : (
+        <div> Welcome to MyFitnessVault! </div>
+      )}
     </div>
   )
 }
