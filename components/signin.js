@@ -12,19 +12,13 @@ export default function SignIn() {
 
     async function HandleLoginSubmit(e){
         e.preventDefault()
-        const { error } = await supabase.auth.signInWithPassword({
+        await supabase.auth.signInWithPassword({
             email,
             password,
         });
-
-        if (error) {
-            console.error('Error logging in:', error);
-        } else {
-            console.log('Login successful:', email);
-            router.push('/')
-        }
         setEmail('')
         setPassword('')
+        router.push('/')
     };
     
     return (

@@ -1,21 +1,16 @@
-.bar {
+.container {
     color: #fa544c;
     display: flex;
     background-color: #0A0A00; 
-    height: 8vh;
+    display: flex;
+    justify-content: space-around;
     align-items: center;
-    align-content: center;
-    margin-bottom: 6vh;
-    justify-content: center;
-  }
-  .title{
-    padding: 50px;
   }
   .homebutton {
-    padding: 25px;
-    font-size: 2em;
+    font-size: 1.6em;
     color: #cd3d36;
     text-decoration: none;
+    margin: 1rem;
   }
   .homebutton p {
     font-size: .6em;
@@ -26,8 +21,67 @@
   .homebutton p:hover {
     color: #fffff2;
   }
-  .icon {
-    height: 30px;
+  
+  .links ul {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+  }
+  .links li {
+      list-style: none;
+      margin-right: 25px;
+  }
+  .toggleButton {
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    top: 20px;
+  }
+  .toggleButton .bar {
+    height: 3px;
+    width: 100%;
     background-color: #cd3d36;
-    border-radius: 15px;
+    border-radius:10px;
+  }
+    .icon {
+      height: 30px;
+      background-color: #cd3d36;
+      border-radius: 15px;
+    }
+    @media(max-width: 425px) {
+      .title {
+        font-size: .7rem;
+        margin-left: 20px;
+      }
+      .toggleButton {
+          display: flex;
+      }
+      .links {
+          display: none;
+          width: 100%;
+          justify-content: center;
+          align-items: center;
+      }
+      .container{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .links ul {
+      flex-direction: column;
+      width: 100;
+    }
+    .links li {
+        text-align: center;
+        margin-right: 0;
+    }
+    toggleButton .bar {
+      border: 1.5px solid #cd3d36;
+  }
+
   }

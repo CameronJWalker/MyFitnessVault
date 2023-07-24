@@ -40,6 +40,8 @@
     padding: 0;
     background-image: linear-gradient(to bottom right, #cd3d36,black);
     color: white;
+    border-radius: 5px;
+
 }
 form .button input:hover{
     background-image: linear-gradient(to top left, #cd3d36,black);
@@ -61,9 +63,10 @@ form .button input:hover{
     width: 25vw;
     height: 25px;
     display: flex;
-    justify-content: center; /* Centers items horizontally */
-    align-items: center; /* Centers items vertically */
+    justify-content: center;
+    align-items: center; 
     margin-top: 15px;
+    
 }
 .signOut:hover{
     background-image: linear-gradient(to top left, #cd3d36,black);

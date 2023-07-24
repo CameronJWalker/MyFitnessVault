@@ -24,3 +24,49 @@
   margin: 75px;
   gap: 25px;
 }
+.welcomecontainer {
+  margin-top: 150px;
+  max-width: 600px;
+  padding: 20px;
+  background-color: #fffff2;
+  border: 1px solid #fffff2;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.welcomecontainer p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.welcomecontainer h1 {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #cd3d36; 
+}
+.userpagebtn {
+    color: white;
+    background-image: linear-gradient(to bottom right, #cd3d36,black);
+    width: 25vw;
+    height: 5vh;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    margin-top: 50px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    font-size: 18px;
+    text-decoration: none;
+}
+  .userpagebtn:hover{
+    background-image: linear-gradient(to top left, #cd3d36,black);
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

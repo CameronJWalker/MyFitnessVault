@@ -3,7 +3,6 @@ import WorkoutFeed from '../components/WorkoutFeed'
 import NutritionFeed from '../components/NutritionFeed'
 import PRLogFeed from '../components/PRLogFeed'
 import { useAuth } from '../AuthContext'
-
 import Home from '../styles/Home.module.css'
 
 export default function HomePage() {
@@ -25,7 +24,17 @@ export default function HomePage() {
           </div>
         </div>
       ) : (
-        <div> Welcome to MyFitnessVault! </div>
+        <div className={Home.container}>
+          <div className={Home.welcomecontainer}> 
+            <h1>Welcome to MyFitnessVault</h1>
+            <p>
+              Track your workouts, nutrition, and personal records all in one place. 
+              Login to access your personalized dashboard and stay on top of your fitness journey. 
+              Reach your goals, stay motivated, and achieve your best self with us. Let's get started!
+            </p>
+          </div>
+          <a href="/userpage" className={Home.userpagebtn} >Sign In / Sign up</a>
+        </div>
       )}
     </div>
   )

@@ -3,7 +3,7 @@ import User from "../styles/User.module.css"
 import supabase from "@/pages/api/supabaseClient"
 import { useRouter } from 'next/router';
 
-export default function SignUp({ signedIn }) {
+export default function SignUp() {
     
     const [ email, setEmail ] = useState('')
     const [ password, setPassword ] = useState('')
@@ -16,13 +16,7 @@ export default function SignUp({ signedIn }) {
             email,
             password
         });
-        if (error) {
-            console.error('Error: ', error);
-        } else {
-            console.log('Successful: ', email);
-            router.push('/')
-
-        }
+        router.push('/')
         setEmail('')
         setPassword('')
     };
