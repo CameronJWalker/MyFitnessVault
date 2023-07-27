@@ -28,6 +28,11 @@ export default function NewWorkout() {
         console.log(data)
         setFormError(null)
       }
+      setName('')
+      setType('')
+      setSets('')
+      setReps('')
+      setWeight('')
     }
 
     return (

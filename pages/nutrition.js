@@ -24,6 +24,11 @@ export default function Nutrition() {
           console.log(data)
           setFormError(null)
         }
+        setMealName('')
+        setCalories('')
+        setProtein('')
+        setFat('')
+        setCarbs('')
       }
    
     return (

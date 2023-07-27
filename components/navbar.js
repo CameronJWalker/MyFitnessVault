@@ -23,10 +23,10 @@ export default function Navbar() {
             </div>
             <div className={Nav.links} ref={myNavRef}>
                 <ul>
-                    <li><Link href="/newworkout" className={Nav.homebutton}><p>Workout</p></Link></li>
+                    <li><Link href="/newWorkout" className={Nav.homebutton}><p>Workout</p></Link></li>
                     <li><Link href="/nutrition" className={Nav.homebutton}><p>Nutrition</p></Link></li>
-                    <li><Link href="/prlog" className={Nav.homebutton}><p>PR</p></Link></li>         
-                    <li><Link href="/userpage" className={Nav.homebutton}><img src="../user.png" className={Nav.icon}/></Link></li>
+                    <li><Link href="/prLog" className={Nav.homebutton}><p>PR</p></Link></li>         
+                    <li><Link href="/userPage" className={Nav.homebutton}><img src="../user.png" className={Nav.icon}/></Link></li>
                 </ul>
             </div>
         </div>

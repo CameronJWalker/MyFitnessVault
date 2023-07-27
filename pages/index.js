@@ -1,7 +1,7 @@
 import Link from 'next/link'
-import WorkoutFeed from '../components/WorkoutFeed'
-import NutritionFeed from '../components/NutritionFeed'
-import PRLogFeed from '../components/PRLogFeed'
+import WorkoutFeed from '../components/workoutFeed'
+import NutritionFeed from '../components/nutritionFeed'
+import PRLogFeed from '../components/prLogFeed'
 import { useAuth } from '../AuthContext'
 import Home from '../styles/Home.module.css'
 
@@ -14,13 +14,13 @@ export default function HomePage() {
       {user ? (
         <div className={Home.buttoncontainer}> 
 
-          <Link href="/newworkout"><button> New Workout </button></Link>
+          <Link href="/newWorkout"><button> New Workout </button></Link>
           <Link href="/nutrition"><button> New Nutrition </button></Link>
-          <Link href="/prlog"><button> New Personal Record </button></Link>
+          <Link href="/prLog"><button> New Personal Record </button></Link>
           <div className={Home.feedcontainer}>
+            <PRLogFeed />
             <WorkoutFeed />
             <NutritionFeed />
-            <PRLogFeed />
           </div>
         </div>
       ) : (
@@ -33,7 +33,7 @@ export default function HomePage() {
               Reach your goals, stay motivated, and achieve your best self with us. Let's get started!
             </p>
           </div>
-          <a href="/userpage" className={Home.userpagebtn} >Sign In / Sign up</a>
+          <a href="/userPage" className={Home.userpagebtn} >Sign In / Sign up</a>
         </div>
       )}
     </div>

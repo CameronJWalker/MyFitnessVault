@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import supabase from "../pages/api/supabaseClient.js"
 import Feed from "../styles/Feed.module.css"
-import NutritionCard from "./NutritionCard.js"
+import NutritionCard from "./nutritionCard.js"
 
 export default function NutritionFeed() {
     const [fetchError, setFetchError] = useState(null)
@@ -32,7 +32,7 @@ export default function NutritionFeed() {
             <h3>Nutrition</h3>
             {!fetchError && (<p>Login to see feed</p>)}
             {nutritions && (
-                <div className={Feed.card}>
+                <div>
                     {nutritions.map(nutrition => (
                         <NutritionCard  key={nutrition.id} nutrition={nutrition}/>
                     ))}

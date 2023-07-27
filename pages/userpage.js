@@ -1,6 +1,6 @@
 import User from "../styles/User.module.css"
-import SignUp from "../components/signup"
-import SignIn from "../components/signin"
+import SignUp from "../components/signUp"
+import SignIn from "../components/signIn"
 import { useAuth } from '../AuthContext'
 
 export default function UserPage() {

@@ -20,6 +20,8 @@ export default function PRLog() {
         console.log(data)
         setFormError(null)
       }
+      setName('')
+      setPR('')
     }
 
   return(

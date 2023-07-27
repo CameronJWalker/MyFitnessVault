@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 import supabase from '/pages/api/supabaseClient';
 
 const AuthContext = createContext();
@@ -10,14 +10,28 @@ export function useAuth() {
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
 
-  // Check if the user is authenticated on initial load
-  supabase.auth.onAuthStateChange((event, session) => {
+  const handleAuthChange = (event, session) => {
     if (event === 'SIGNED_IN') {
       setUser(session.user);
+      localStorage.setItem('user', JSON.stringify(session.user));
     } else if (event === 'SIGNED_OUT') {
       setUser(null);
+      localStorage.removeItem('user');
     }
-  });
+  };
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem('user');
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    }
+
+    supabase.auth.onAuthStateChange(handleAuthChange);
+
+    return () => {
+
+    };
+  }, []);
 
   const login = async (email, password) => {
     const { error } = await supabase.auth.signIn({ email, password });
