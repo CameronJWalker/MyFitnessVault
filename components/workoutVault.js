@@ -44,13 +44,13 @@ export default function WorkoutVault() {
       <table>
         <thead>
           <tr>
-            <th>Action</th>
+            <th></th>
             <th>Workout Name</th>
             <th>Sets</th>
             <th>Reps</th>
             <th>Weight</th>
             <th>Rest</th>
-            <th>Entry Date</th>
+            <th>Date</th>
           </tr>
         </thead>
         <tbody>
