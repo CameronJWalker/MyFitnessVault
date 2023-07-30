@@ -17,8 +17,8 @@ export default function Nutrition() {
           .insert([{ mealName, fat, carbs, protein, calories }])
         
         if (error) {
-          console.log("Error!")
-          setFormError('Error!')
+            setFormError('Error!')
+            console.log(formError)
         }
         if (data) {
           console.log(data)

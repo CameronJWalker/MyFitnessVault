@@ -1,0 +1,45 @@
+.container {
+    display: flex;
+    margin: 75px;
+    height: 70vh;
+}
+
+.deleteButton {
+    color: rgb(255, 0, 0);
+    background: none;
+    border: none;
+    width: 24px;
+    height: 24px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+    .customTd {
+    padding-right: 8px; 
+  }
+.workouts {
+    margin-right: 100px;
+    border: 1px solid #000;
+    width: 25vw;
+}
+.workouts th {
+    border-bottom: 3px solid #000000;
+}
+.workouts td  {
+    border-bottom: 1px solid #000000;
+    padding-right: 1.5vw;
+
+}
+.prs {
+    border: 1px solid #000;
+    width: 20vw;
+
+}
+.nutrition {
+    margin-left: 100px;
+    border: 1px solid #000;
+    width: 25vw;
+
+}

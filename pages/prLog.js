@@ -13,8 +13,8 @@ export default function PRLog() {
         .insert([{ name, pr }])
 
       if (error) {
-        console.log("Error!")
         setFormError('Error!')
+        console.log(formError)
       }
       if (data) {
         console.log(data)

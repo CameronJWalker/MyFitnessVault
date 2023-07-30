@@ -7,13 +7,23 @@ export default function NewWorkout() {
     const [ reps, setReps ] = useState('')
     const [ weight, setWeight ] = useState('')
     const [ rest, setRest ] = useState('')
-    
+    const [ formError, setFormError ] = useState(null)
+
     const handleSubmit = async (e) => {
       e.preventDefault()
       const { data, error } = await supabase 
         .from('workouts')
         .insert([{ name, sets, reps, weight, rest }])
         .select()
+
+      if (error) {
+        setFormError('Error!')
+        console.log(formError)
+      }
+      if (data) {
+        console.log(data)
+        setFormError(null)
+      }
       setName('')
       setSets('')
       setReps('')
