@@ -3,17 +3,28 @@ import Feed from "../styles/Feed.module.css"
 const NutritionCard = ({ nutrition }) => {
 
     return (
-        <div className={Feed.card}>
-            <h4>{nutrition.mealName}</h4>
-            <h4>Calories:</h4>
-            <p>{nutrition.calories}</p>
-            <h4>Protien:</h4>
-            <p>{nutrition.protein}</p> 
-            <h4>Fat:</h4>
-            <p>{nutrition.fat}</p> 
-            <h4>Carbs:</h4>
-            <p>{nutrition.carbs}</p>
-        </div>
+        <table className={Feed.card}>
+            <tr>
+                <th>Meal Name</th>
+                <td>{nutrition.mealName}</td>
+            </tr>
+            <tr>
+                <th>Calories</th>
+                <td>{nutrition.calories}</td>
+            </tr>
+            <tr>
+                <th>Protein</th>
+                <td>{nutrition.protein}</td>
+            </tr>
+            <tr>
+                <th>Fat</th>
+                <td>{nutrition.fat}</td>
+            </tr>
+            <tr>
+                <th>Carbs</th>
+                <td>{nutrition.carbs}</td>
+            </tr>
+        </table>
     )
 }
 

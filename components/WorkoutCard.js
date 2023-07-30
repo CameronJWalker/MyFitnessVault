@@ -3,19 +3,29 @@ import Feed from "../styles/Feed.module.css"
 const WorkoutCard = ({ workout }) => {
 
     return (
-        <div className={Feed.card}>
-            <h4>{workout.name}</h4>
-            <p>{workout.type}</p>
-            <h4>Sets:</h4>
-            <p>{workout.sets}</p>
-            <h4>Reps:</h4> 
-            <p>{workout.reps}</p>
-            <h4>Weight:</h4> 
-            <p>{workout.weight}</p>
-            <h4>Rest:</h4> 
-            <p>{workout.rest}</p>
-        </div>
-    )
-}
+        <table className={Feed.card}>
+        <tr>
+            <th>Workout Name: </th>
+            <td>{workout.name}</td>
+        </tr>
+        <tr>
+            <th>Sets: </th>
+            <td>{workout.sets}</td>
+        </tr>
+        <tr>
+            <th>Reps: </th>
+            <td>{workout.reps}</td>
+        </tr>
+        <tr>
+            <th>Weight: </th>
+            <td>{workout.weight} (lbs)</td>
+        </tr>
+        <tr>
+            <th>Rest: </th>
+            <td>{workout.rest} (s)</td>
+        </tr>
+        </table>
+  );
+};
 
 export default WorkoutCard

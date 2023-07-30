@@ -12,17 +12,23 @@ export default function HomePage() {
     <div>
       
       {user ? (
-        <div className={Home.buttoncontainer}> 
-
-          <Link href="/newWorkout"><button> New Workout </button></Link>
-          <Link href="/nutrition"><button> New Nutrition </button></Link>
-          <Link href="/prLog"><button> New Personal Record </button></Link>
+        <>
+          <div className={Home.buttoncontainer}> 
+            <Link href="/newWorkout"><button> New Workout </button></Link>
+            <Link href="/nutrition"><button> New Nutrition </button></Link>
+            <Link href="/prLog"><button> New Personal Record </button></Link>
+          </div>
           <div className={Home.feedcontainer}>
-            <PRLogFeed />
+            <img src="crown.png" className={Home.crown}/>
+            <div className={Home.prlog}>
+              <img src="flexing1.png" className={Home.leftarm}/>              
+              <PRLogFeed />
+              <img src="flexing2.png" className={Home.rightarm}/>                            
+            </div>
             <WorkoutFeed />
             <NutritionFeed />
           </div>
-        </div>
+        </>
       ) : (
         <div className={Home.container}>
           <div className={Home.welcomecontainer}> 

@@ -3,33 +3,18 @@ import supabase from "./api/supabaseClient.js"
 
 export default function NewWorkout() {
     const [ name, setName ] = useState('')
-    const [ type, setType ] = useState('')
     const [ sets, setSets ] = useState('')
     const [ reps, setReps ] = useState('')
     const [ weight, setWeight ] = useState('')
     const [ rest, setRest ] = useState('')
-    const [ formError, setFormError ] = useState(null)
-    const [user, setUser] = useState(null);
-
-    
     
     const handleSubmit = async (e) => {
       e.preventDefault()
       const { data, error } = await supabase 
         .from('workouts')
-        .insert([{ name, type, sets, reps, weight, rest }])
+        .insert([{ name, sets, reps, weight, rest }])
         .select()
-
-      if (error) {
-        console.log("Error!")
-        setFormError('Error!')
-      }
-      if (data) {
-        console.log(data)
-        setFormError(null)
-      }
       setName('')
-      setType('')
       setSets('')
       setReps('')
       setWeight('')
@@ -37,7 +22,8 @@ export default function NewWorkout() {
 
     return (
     <div className="container">
-      <div className="title">New Workout
+      <div className="title">
+        <h2>New Workout</h2>
         <h6> Enter Workout Details Below </h6>
         <div className="logo">
           <img src="2logo.png" alt="TheWorkoutApp" className='image'/>
@@ -57,20 +43,6 @@ export default function NewWorkout() {
                       required
                 />
             </div>
-
-            <div className="input-wrap">
-              <span className="details">Cardio or Strength</span>
-                  <input
-                        type="text" 
-                        placeholder="Cardio or Stregnth"
-                        name="workoutType" 
-                        value={type}
-                        className="input-field" 
-                        onChange={(e) => setType(e.target.value)}
-                        required
-                  />
-            </div>
-
             <div className="input-wrap">
               <span className="details"># of Sets</span>
                   <input

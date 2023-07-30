@@ -13,7 +13,7 @@ export default function WorkoutFeed() {
         .from('prlog')
         .select()
         .order('created_at', { ascending: false })
-        .limit(4);
+        .limit(3);
 
         if (error) {
           setFetchError('Could not fetch the feed')
@@ -29,7 +29,7 @@ export default function WorkoutFeed() {
     }, [])
 
     return (
-        <div className={Feed.container}>
+        <div className={Feed.container2}>
           <h3>Personal Records</h3>
             {fetchError && (<p>{fetchError}</p>)}
             {personalRecords && (

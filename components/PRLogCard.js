@@ -3,10 +3,12 @@ import Feed from "../styles/Feed.module.css"
 const PRLogCard = ({ personalRecord }) => {
 
     return (
-        <div className={Feed.card2}>
-            <h4>{personalRecord.name}</h4>
-            <p>{personalRecord.pr}</p>
-        </div>
+        <table className={Feed.card2}>
+            <tr>
+                <th>{personalRecord.name}</th>
+                <td>{personalRecord.pr}</td>
+            </tr>
+        </table>
     )
 }
 

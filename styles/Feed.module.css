@@ -1,26 +1,48 @@
 .container{
-    background-color:#fffff2;
     height: 15vh;
     border-radius: 5px;
     border: 1px solid #000;
-
+    width: 40vw;
 }
-.container h3 {
+.container2{
+    height: 15vh;
+    border-radius: 5px;
+    border: 2px solid #000;
+    width: 25vw;
+    
+}
+
+.container, .container2 h3 {
     text-align: center;
-    margin: 3px;
+    margin: 4px;
     margin-bottom: 8px;
 }
 .card {
     display: grid;
     grid-auto-flow: column;
-    padding: 3px;
-    flex-grow: 1; /* Allow each item to grow and take up available space */
-  flex-basis: 0; /* This ensures that the flex items have equal initial size */
-  padding: 2px;
-  margin: 2px;
+    padding: 1px;    
 }
+.card tr, .card2 tr {
+    border-bottom: 1px solid #000000;
+}
+
 .card2 {
     display: flex;
     justify-content: center;
-    gap: 75px;
+    padding: 2px;
+}
+.card2 th {
+    padding-right: 15vw;
+}
+@media(max-width: 425px) {
+    .container{
+        width: 90vw;
+        font-size: x-small;
+        font-weight: 700;
+    }
+    .container2{
+        width: 60vw;
+
+    }
+
 }

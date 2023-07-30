@@ -1,11 +1,13 @@
 .buttoncontainer a button {
-  width: 15vw;
+  width: 300px;
+  height: 80px;
   background-color:#0A0A00; 
   color: #cd3d36;
   border: none;
   margin: 15px;
   border-radius: 15px;
   padding: 4vh;
+  text-align: center;
   font-size: larger;
   font-family: 'Exo 2', sans-serif;
 }
@@ -18,20 +20,39 @@
   color:#fffff2;
   cursor: pointer;
 }
+.prlog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.crown{
+  margin-top: -50px;
+  height: 75px;
+  margin-bottom: -20px;
+}
+.leftarm{
+  height: 100px;
+}
+.rightarm{
+  height: 100px;
+
+}
 .feedcontainer {
   display: flex;
   flex-direction: column;
   margin: 75px;
   gap: 25px;
+  justify-content: center;
+  align-items: center;
 }
 .welcomecontainer {
   margin-top: 150px;
-  max-width: 600px;
+  width: 40vw;
   padding: 20px;
   background-color: #fffff2;
-  border: 1px solid #fffff2;
+  border: 1px solid #020202;
   border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .welcomecontainer p {
@@ -70,4 +91,40 @@
   align-items: center;
   justify-content: center;
 }
+@media(max-width: 768px) {
+  .buttoncontainer{
+    display: grid;
+    align-items: center;
+    justify-items: center;
+  }
+  .buttoncontainer a button{
+    font-size: larger;
+    width: 50vw;
+    height: 12vh;
 
+  }
+}
+@media(max-width: 425px) {
+  .welcomecontainer {
+    width: 75vw;
+  }
+  .userpagebtn {
+    width: 50vw;
+  }
+  .buttoncontainer{
+    display: grid;
+    align-items: center;
+    justify-items: center;
+  }
+  .buttoncontainer a button{
+    font-size: larger;
+    width: 50vw;
+    height: 12vh;
+  }
+  .leftarm, .rightarm {
+        height: 9vh;
+  }
+  .crown {
+    height: 6vh;
+  }
+}
