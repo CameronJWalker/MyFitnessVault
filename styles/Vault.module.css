@@ -32,11 +32,32 @@
     padding-right: 1.5vw;
 
 }
+.nutrition {
+    margin-right: 100px;
+    border: 1px solid #000;
+    width: 25vw;
+}
+.nutrition th {
+    border-bottom: 3px solid #000000;
+}
+.nutrition td  {
+    border-bottom: 1px solid #000000;
+    padding-right: 1.5vw;
+
+}
 .prs {
     border: 1px solid #000;
     width: 20vw;
+}
+.prs th {
+    border-bottom: 3px solid #000000;
+}
+.prs td  {
+    border-bottom: 1px solid #000000;
+    padding-right: 1.5vw;
 
 }
+
 .nutrition {
     margin-left: 100px;
     border: 1px solid #000;

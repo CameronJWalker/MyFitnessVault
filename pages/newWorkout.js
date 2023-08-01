@@ -28,6 +28,7 @@ export default function NewWorkout() {
       setSets('')
       setReps('')
       setWeight('')
+      setRest('')
     }
 
     return (
