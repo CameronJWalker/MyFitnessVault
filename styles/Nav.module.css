@@ -7,13 +7,16 @@
     align-items: center;
   }
   .homebutton {
-    font-size: 1.6em;
+    font-size: 1.6vw;
     color: #cd3d36;
     text-decoration: none;
     margin: 1rem;
   }
   .homebutton p {
     font-size: .6em;
+  }
+  .homebutton h3 {
+    font-size: 3vw;
   }
   .homebutton h3:hover {
     color: #fffff2;
@@ -53,13 +56,16 @@
       background-color: #cd3d36;
       border-radius: 15px;
     }
-    @media(max-width: 425px) {
+@media(max-width: 688px) {
       .title {
         font-size: .7rem;
         margin-left: 20px;
       }
       .toggleButton {
           display: flex;
+      }
+      .homebutton {
+        font-size: 5vw;
       }
       .links {
           display: none;
@@ -84,4 +90,9 @@
       border: 1.5px solid #cd3d36;
   }
 
+  }
+  @media(min-width: 767px) {
+    .homebutton{
+      font-size: 2vw;
+    }
   }

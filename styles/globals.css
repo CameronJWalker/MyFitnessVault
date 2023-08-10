@@ -30,6 +30,7 @@ main {
   font-size: 25px;
   font-weight:500;
   position: relative;
+
 }
 .container form .topic-details{
   flex-wrap: wrap;
@@ -80,12 +81,13 @@ form .button input:hover{
 }
 
 .image {
-  width: 8vw;
+  width: 10vw;
   background-color: transparent;
   position: absolute;
-  right: 1vw;
+  right: 2vw;
   top: -4vh;
   height: 12vh;
+  margin-left: 10px;
 }
 
 .card p {
@@ -93,4 +95,18 @@ form .button input:hover{
   display:inline-flex;
   padding: 2vh;
 
+}
+@media(max-width: 992px){
+  .container {
+    width: 75vw;
+  }
+  .image {
+    width: 20vw;
+  }
+  .title h2 {
+    font-size: 25px;
+  }
+  form .button input {
+    width: 100%;
+  }
 }

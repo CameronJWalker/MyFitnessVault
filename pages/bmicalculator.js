@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Calc from '../styles/Calc.module.css'
 
 export default function BMICalculator() {
@@ -24,9 +24,19 @@ export default function BMICalculator() {
     return (
         <div className="container">
             {BMI ? (
+                <>
                 <div className={Calc.bmicontainer}>
-                
+                    <h3>BMI Categories</h3>
+                    <p>Underweight: 18.5 or less</p>
+                    <p>Normal weight: 18.5-24.9</p>
+                    <p>Overweight: 25-29.9</p>
+                    <p>Obesity: 30 or greater</p>
+                    <h4>Your Body Mass Index (BMI): {BMI}</h4>
                 </div>
+                <div>
+                    
+                </div>
+                </>
             ) : (
                 <>
                 <div className="title">

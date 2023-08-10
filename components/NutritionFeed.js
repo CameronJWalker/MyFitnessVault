@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import supabase from "../pages/api/supabaseClient.js"
 import Feed from "../styles/Feed.module.css"
-import NutritionCard from "./nutritionCard.js"
+import NutritionCard from "./NutritionCard.js"
 
 export default function NutritionFeed() {
     const [fetchError, setFetchError] = useState(null)
@@ -20,7 +20,7 @@ export default function NutritionFeed() {
           console.log(fetchError)
         }
         if (data) {
-          setNutritions(data)
+          setNutritions(data)    
           setFetchError(true)
         }
       }

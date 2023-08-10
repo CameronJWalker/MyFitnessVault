@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import supabase from "../pages/api/supabaseClient.js"
 import Feed from "../styles/Feed.module.css"
-import WorkoutCard from "./workoutCard.js"
+import WorkoutCard from "./WorkoutCard.js"
 
 export default function WorkoutFeed() {
     const [fetchError, setFetchError] = useState(null)

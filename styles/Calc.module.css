@@ -1,3 +1,18 @@
 .bmicontainer {
-
+    text-align: center;
+    margin-top: 150px;
+    height: 25vh;
+    background-color: #fffff2;
+    border: 1px solid #020202;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.bmicontainer h3 {
+    margin-bottom: 20px;
+}
+.bmicontainer p {
+    padding: 5px;
+}
+.bmicontainer h4 {
+    margin-top: 25px;
 }

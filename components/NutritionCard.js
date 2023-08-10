@@ -5,23 +5,23 @@ const NutritionCard = ({ nutrition }) => {
     return (
         <table className={Feed.card}>
             <tr>
-                <th>Meal Name</th>
+                <th>Meal Name: </th>
                 <td>{nutrition.mealName}</td>
             </tr>
             <tr>
-                <th>Calories</th>
+                <th>Calories: </th>
                 <td>{nutrition.calories}</td>
             </tr>
             <tr>
-                <th>Protein</th>
+                <th>Protein: </th>
                 <td>{nutrition.protein}</td>
             </tr>
             <tr>
-                <th>Fat</th>
+                <th>Fat: </th>
                 <td>{nutrition.fat}</td>
             </tr>
             <tr>
-                <th>Carbs</th>
+                <th>Carbs: </th>
                 <td>{nutrition.carbs}</td>
             </tr>
         </table>

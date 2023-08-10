@@ -32,7 +32,7 @@ export default function PRVault() {
                 <thead>
                 <tr>
                     <th></th>
-                    <th>Worout</th>
+                    <th>Workout</th>
                     <th>PR</th>
                     <th>Date</th>
                 </tr>
