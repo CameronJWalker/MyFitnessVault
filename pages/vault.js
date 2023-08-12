@@ -29,7 +29,7 @@ export default function MyVault() {
                             <h3>Log in to see your workouts...</h3>
                         </div>
                         <div className={Vault.prs}>
-                            <h3>Log in to see your PR&apos;s...</h3>
+                            <h3>Log in to see your PRs...</h3>
                         </div>
                         <div className={Vault.nutrition}>
                             <h3>Log in to see your meals...</h3>
