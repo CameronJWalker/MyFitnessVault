@@ -25,7 +25,7 @@ export default function NutritionFeed() {
         }
       }
       fetchNutritions()
-    }, [])
+    }, [fetchError])
 
     return (
         <div className={Feed.container}>

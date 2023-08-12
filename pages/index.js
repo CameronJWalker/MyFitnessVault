@@ -19,11 +19,11 @@ export default function HomePage() {
             <Link href="/prLog"><button> New Personal Record </button></Link>
           </div>
           <div className={Home.feedcontainer}>
-            <img src="crown.png" className={Home.crown}/>
+            <img src="crown.png" className={Home.crown} alt="a red crown"/>
             <div className={Home.prlog}>
-              <img src="flexing1.png" className={Home.leftarm}/>              
+              <img src="flexing1.png" className={Home.leftarm} alt="a flexing arm"/>              
               <PRLogFeed />
-              <img src="flexing2.png" className={Home.rightarm}/>                            
+              <img src="flexing2.png" className={Home.rightarm} alt="a flexing arm"/>                            
             </div>
             <WorkoutFeed />
             <NutritionFeed />

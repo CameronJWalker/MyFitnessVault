@@ -23,7 +23,7 @@ export default function NutritionVault() {
           }
         }
         fetchNutritions()
-      }, [])
+      }, [fetchError])
       
       const handleDeleteWorkout = async (id) => {
         try {
