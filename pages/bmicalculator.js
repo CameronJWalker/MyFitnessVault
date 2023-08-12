@@ -41,7 +41,7 @@ export default function BMICalculator() {
                 <>
                 <div className="title">
                 <h2>BMI Calculator</h2>
-                <h6>Enter your weight and height below</h6>
+                <h6>Enter your weight and height</h6>
                 <div className="logo">
                     <img src="2logo.png" alt="TheWorkoutApp" className="image"/>
                 </div>
@@ -78,7 +78,7 @@ export default function BMICalculator() {
                             />
                     </div>
                     <div className="button">
-                        <input type="submit" value="Calculate Body Mass Index (BMI)" className="sign-btn" />
+                        <input type="submit" value="Calculate BMI" className="sign-btn" />
                     </div>
                 </div>
             </form>

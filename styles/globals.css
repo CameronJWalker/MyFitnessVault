@@ -81,10 +81,10 @@ form .button input:hover{
 }
 
 .image {
-  width: 10vw;
+  width: 14vw;
   background-color: transparent;
   position: absolute;
-  right: 2vw;
+  right: 1vw;
   top: -4vh;
   height: 12vh;
   margin-left: 10px;
@@ -101,10 +101,16 @@ form .button input:hover{
     width: 75vw;
   }
   .image {
-    width: 20vw;
+    width: 16vw;
+    right: -2vw;
+    
   }
   .title h2 {
-    font-size: 25px;
+    font-size: 5vw;
+  
+  }
+  .title h6 {
+    font-size: 3vw;
   }
   form .button input {
     width: 100%;
