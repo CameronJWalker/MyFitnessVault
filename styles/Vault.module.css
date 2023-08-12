@@ -1,8 +1,8 @@
 .container {
     display: flex;
-    margin: 75px;
-    height: 70vh;
+    margin: 50px;
     gap: 25px;
+    font-size: 80%;
 }
 
 .deleteButton {
@@ -23,6 +23,9 @@
 .workouts {
     border: 1px solid #000;
     width: 100%;
+    min-height: 300px;
+    max-height: 400px; 
+    overflow-y: auto; 
 }
 .workouts th {
     border-bottom: 3px solid #000000;
@@ -35,6 +38,8 @@
 .nutrition {
     border: 1px solid #000;
     width: 100%;
+    min-height: 300px;
+    max-height: 400px;    overflow-y: auto; 
 }
 .nutrition th {
     border-bottom: 3px solid #000000;
@@ -47,6 +52,9 @@
 .prs {
     border: 1px solid #000;
     width: 60%;
+    min-height: 300px;
+    max-height: 400px;    
+    overflow-y: auto; 
 }
 .prs th {
     border-bottom: 3px solid #000000;
@@ -57,7 +65,7 @@
 }
 
 
-@media(max-width:992px) {
+@media(max-width:800px) {
     .container {
         flex-direction: column;
         justify-content: center;
@@ -66,9 +74,6 @@
     }
     .workouts, .nutrition {
         width: 100%;
-        height:350vh;
     }
-    .prs {
-        height: 250vh;
-    }
+    
 }

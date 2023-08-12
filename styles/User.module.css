@@ -50,7 +50,7 @@ form .button input:hover{
     display: flex;
     margin-left: auto;
     margin-right: auto;
-    height: 250px;
+    height: 100px;
 }
 .buttonContainer{
     display: flex;
@@ -70,4 +70,11 @@ form .button input:hover{
 }
 .signOut:hover{
     background-image: linear-gradient(to top left, #cd3d36,black);
+}
+@media(max-width: 600px) {
+    
+    .panel div > form .submit {
+        width: 15vw;
+        margin-left: 50%;
+    }
 }

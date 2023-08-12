@@ -41,7 +41,7 @@ export default function WorkoutVault() {
 
   return (
     <div>
-      <table>
+      <table className={Vault.scroll}>
         <thead>
           <tr>
             <th></th>
