@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import WorkoutFeed from '../components/workoutFeed,js'
+import WorkoutFeed from '../components/workoutFeed.js'
 import NutritionFeed from '../components/nutritionFeed.js'
 import PRLogFeed from '../components/prLogFeed.js'
 import { useAuth } from '../AuthContext.js'
