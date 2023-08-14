@@ -36,10 +36,10 @@ export default function HomePage() {
             <p>
               Track your workouts, nutrition, and personal records all in one place. 
               Login to access your personalized dashboard and stay on top of your fitness journey. 
-              Reach your goals, stay motivated, and achieve your best self with us. Let's get started!
+              Reach your goals, stay motivated, and achieve your best self with us. Lets get started!
             </p>
           </div>
-          <a href="/userPage" className={Home.userpagebtn} >Sign In / Sign up</a>
+          <Link href="/userPage" className={Home.userpagebtn} >Sign In / Sign up</Link>
         </div>
       )}
     </div>
