@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import supabase from "../pages/api/supabaseClient.js"
 import Feed from "../styles/Feed.module.css"
-import PRLogCard from "./PRLogCard.js"
+import PRLogCard from "./prLogCard.js"
 
 export default function WorkoutFeed() {
   const [personalRecords, setPersonalRecords] = useState(null)

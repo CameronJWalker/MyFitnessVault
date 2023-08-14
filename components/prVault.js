@@ -40,11 +40,11 @@ export default function PRVault() {
                 <tbody>
                 {personalRecords &&
                     personalRecords.map((personalRecord) => (
-                    <tr key={personalRecords.id}>
-                        <td><button className={`${Vault.deleteButton} ${Vault.customTd}`} onClick={() => handleDeleteWorkout(nutrition.id)}>X</button></td>
-                        <td>{personalRecord.name}</td>
-                        <td>{personalRecord.pr}</td>
-                        <td>{personalRecord.created_at}</td>
+                    <tr key={personalRecord.id}>
+                        <td key="buttonRow"><button className={`${Vault.deleteButton} ${Vault.customTd}`} onClick={() => handleDeleteWorkout(nutrition.id)}>X</button></td>
+                        <td key="prNameRow">{personalRecord.name}</td>
+                        <td key="weightRow">{personalRecord.pr}</td>
+                        <td key="dateRow">{personalRecord.created_at}</td>
                     </tr>
                     ))}
                 </tbody>

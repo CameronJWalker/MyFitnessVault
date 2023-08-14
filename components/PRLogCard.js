@@ -4,10 +4,12 @@ const PRLogCard = ({ personalRecord }) => {
 
     return (
         <table className={Feed.card2}>
-            <tr>
-                <th>{personalRecord.name}</th>
-                <td>{personalRecord.pr}</td>
-            </tr>
+            <tbody>
+                <tr>
+                    <th>{personalRecord.name}</th>
+                    <td>{personalRecord.pr}</td>
+                </tr>
+            </tbody>
         </table>
     )
 }

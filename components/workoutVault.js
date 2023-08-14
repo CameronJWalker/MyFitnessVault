@@ -57,13 +57,13 @@ export default function WorkoutVault() {
           {workouts &&
             workouts.map((workout) => (
               <tr key={workout.id}>
-                <td><button className={`${Vault.deleteButton} ${Vault.customTd}`} onClick={() => handleDeleteWorkout(workout.id)}>X</button></td>
-                <td>{workout.name}</td>
-                <td>{workout.sets}</td>
-                <td>{workout.reps}</td>
-                <td>{workout.weight}</td>
-                <td>{workout.rest}</td>
-                <td>{workout.created_at}</td>
+                <td key="buttonRow"><button className={`${Vault.deleteButton} ${Vault.customTd}`} onClick={() => handleDeleteWorkout(workout.id)}>X</button></td>
+                <td key="workoutNameRow">{workout.name}</td>
+                <td key="setsRow">{workout.sets}</td>
+                <td key="repsRow">{workout.reps}</td>
+                <td key="weightRow">{workout.weight}</td>
+                <td key="restRow">{workout.rest}</td>
+                <td key="dateRow">{workout.created_at}</td>
               </tr>
             ))}
         </tbody>

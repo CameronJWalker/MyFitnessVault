@@ -55,14 +55,14 @@ export default function NutritionVault() {
                 <tbody>
                 {nutritions &&
                     nutritions.map((nutrition) => (
-                    <tr key={nutritions.id}>
-                        <td><button className={`${Vault.deleteButton} ${Vault.customTd}`} onClick={() => handleDeleteWorkout(nutrition.id)}>X</button></td>
-                        <td>{nutrition.mealName}</td>
-                        <td>{nutrition.calories}</td>
-                        <td>{nutrition.protein}</td>
-                        <td>{nutrition.fat}</td>
-                        <td>{nutrition.carbs}</td>
-                        <td>{nutrition.created_at}</td>
+                    <tr key={nutrition.id}>
+                        <td key="buttonRow"><button className={`${Vault.deleteButton} ${Vault.customTd}`} onClick={() => handleDeleteWorkout(nutrition.id)}>X</button></td>
+                        <td key="mealNameRow">{nutrition.mealName}</td>
+                        <td key="caloriesRow">{nutrition.calories}</td>
+                        <td key="proteinRow">{nutrition.protein}</td>
+                        <td key="fatRow">{nutrition.fat}</td>
+                        <td key="carbsRow">{nutrition.carbs}</td>
+                        <td key="dateRow">{nutrition.created_at}</td>
                     </tr>
                     ))}
                 </tbody>

@@ -23,6 +23,10 @@
     padding: 1px;    
     font-size: 1vw;
 }
+.card tbody, .card2 tbody{
+    display: grid;
+    grid-auto-flow: column; 
+}
 .card tr, .card2 tr {
     border-bottom: 1px solid #000000;
 }

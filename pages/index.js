@@ -1,7 +1,7 @@
 import Link from 'next/link'
-import WorkoutFeed from '../components/WorkoutFeed'
-import NutritionFeed from '../components/NutritionFeed'
-import PRLogFeed from '../components/PRLogFeed'
+import WorkoutFeed from '../components/workoutFeed'
+import NutritionFeed from '../components/nutritionFeed'
+import PRLogFeed from '../components/prLogFeed'
 import { useAuth } from '../AuthContext'
 import Home from '../styles/Home.module.css'
 
