@@ -1,8 +1,8 @@
 import Link from 'next/link'
-import WorkoutFeed from '../components/workoutFeed'
-import NutritionFeed from '../components/nutritionFeed'
-import PRLogFeed from '../components/prLogFeed'
-import { useAuth } from '../AuthContext'
+import WorkoutFeed from '../components/workoutFeed,js'
+import NutritionFeed from '../components/nutritionFeed.js'
+import PRLogFeed from '../components/prLogFeed.js'
+import { useAuth } from '../AuthContext.js'
 import Home from '../styles/Home.module.css'
 
 export default function HomePage() {
