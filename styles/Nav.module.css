@@ -7,16 +7,15 @@
     align-items: center;
   }
   .homebutton {
-    font-size: 1.6vw;
     color: #cd3d36;
     text-decoration: none;
     margin: 1rem;
   }
   .homebutton p {
-    font-size: .6em;
+    font-size: 1em;
   }
   .homebutton h3 {
-    font-size: 3vw;
+    font-size: 2vw;
   }
   .homebutton h3:hover {
     color: #fffff2;
@@ -91,8 +90,20 @@
   }
 
   }
-  @media(min-width: 767px) {
+  @media(max-width: 768px) {
+    .homebutton h3 {
+      font-size:3vw;
+    }
     .homebutton{
-      font-size: 2vw;
+      font-size: 1.5vw;
     }
   }
+  @media(max-width:425px) {
+    .homebutton h3 {
+      font-size:6vw;
+    }
+    .homebutton{
+      font-size: 3vw;
+    }
+  }
+  

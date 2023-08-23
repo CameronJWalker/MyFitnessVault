@@ -1,4 +1,11 @@
-.buttoncontainer a button {
+.buttoncontainer{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 1fr); 
+  justify-content: center;
+  align-items: center;
+  grid-auto-flow: column; 
+}
+.buttoncontainer button {
   width: 300px;
   height: 80px;
   background-color:#0A0A00; 
@@ -7,11 +14,11 @@
   margin: 15px;
   border-radius: 15px;
   padding: 4vh;
-  text-align: center;
   font-size: larger;
   font-family: 'Exo 2', sans-serif;
+  
 }
-.buttoncontainer a button:hover {
+.buttoncontainer button:hover {
   border: none;
   padding: 2vh;
   border-radius: 15px;
@@ -96,6 +103,7 @@
     margin-top: 50px;
   }
   .buttoncontainer{
+    grid-auto-flow: row; 
     display: grid;
     align-items: center;
     justify-items: center;
@@ -118,6 +126,7 @@
     margin-bottom: 25px;
   }
   .buttoncontainer{
+    grid-auto-flow: row; 
     display: grid;
     align-items: center;
     justify-items: center;

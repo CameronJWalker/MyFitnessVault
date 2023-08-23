@@ -28,8 +28,8 @@ export default function Navbar() {
                     <li><Link href="/prLog" className={Nav.homebutton}><p>Add PR</p></Link></li>         
                     <li><Link href="/vault" className={Nav.homebutton}><p>MyVault</p></Link></li>
                     {/* <li><Link href="/workouts" className={Nav.homebutton}><p>Excercises</p></Link></li> */}
-                    <li><Link href="/bmiCalculator" className={Nav.homebutton}><p>BMI Calculator</p></Link></li>
-                    <li><Link href="/userPage" className={Nav.homebutton}><img src="../user.png" className={Nav.icon}/></Link></li>
+                    <li><Link href="/bmi" className={Nav.homebutton}><p>BMI Calculator</p></Link></li>
+                    <li><Link href="/user" className={Nav.homebutton}><img src="../user.png" className={Nav.icon}/></Link></li>
                 </ul>
             </div>
         </div>

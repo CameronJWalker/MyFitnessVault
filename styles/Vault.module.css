@@ -22,11 +22,13 @@
   }
 .workouts {
     border: 1px solid #000;
-    width: 100%;
+    width: 25vw;
+    height: 70vh;
     min-height: 300px;
-    max-height: 400px; 
     overflow-y: auto; 
+
 }
+
 .workouts th {
     border-bottom: 3px solid #000000;
 }
@@ -37,9 +39,10 @@
 }
 .nutrition {
     border: 1px solid #000;
-    width: 100%;
+    width: 25vw;
+    height: 70vh;
     min-height: 300px;
-    max-height: 400px;    overflow-y: auto; 
+    overflow-y: auto; 
 }
 .nutrition th {
     border-bottom: 3px solid #000000;
@@ -51,9 +54,9 @@
 }
 .prs {
     border: 1px solid #000;
-    width: 60%;
+    width: 15vw;
+    height: 70vh;
     min-height: 300px;
-    max-height: 400px;    
     overflow-y: auto; 
 }
 .prs th {
@@ -62,8 +65,8 @@
 .prs td  {
     border-bottom: 1px solid #000000;
     padding-right: 1.5vw;
+    width: 100%;
 }
-
 
 @media(max-width:800px) {
     .container {
@@ -72,8 +75,7 @@
         align-items: center;
         gap: 30px;
     }
-    .workouts, .nutrition {
+    .workouts, .nutrition, .prs {
         width: 100%;
-    }
-    
+    } 
 }

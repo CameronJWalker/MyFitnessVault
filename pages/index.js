@@ -39,7 +39,7 @@ export default function HomePage() {
               Reach your goals, stay motivated, and achieve your best self with us. Lets get started!
             </p>
           </div>
-          <Link href="/userPage" className={Home.userpagebtn} >Sign In / Sign up</Link>
+          <Link href="/user" className={Home.userpagebtn} >Sign In / Sign up</Link>
         </div>
       )}
     </div>
